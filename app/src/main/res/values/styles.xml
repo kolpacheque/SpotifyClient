@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SearchCard">
+        <item name="android:layout_height">@dimen/action_bar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/bg_search_card</item>
+        <item name="android:elevation">@dimen/action_bar_elevation</item>
+        <item name="android:padding">@dimen/action_bar_padding</item>
+    </style>
+
+</resources>

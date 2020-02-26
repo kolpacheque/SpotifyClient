@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:padding="@dimen/screen_padding">
+
+    <ImageView
+        android:id="@+id/iv_result_item_thumbnail"
+        android:layout_width="@dimen/item_thumbnail_side"
+        android:layout_height="@dimen/item_thumbnail_side"
+        android:elevation="@dimen/item_thumbnail_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_result_item_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/view_spacing"
+        android:textSize="@dimen/item_title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tv_result_item_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_result_item_thumbnail"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_result_item_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/view_spacing"
+        android:textSize="@dimen/item_description_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_result_item_thumbnail"
+        app:layout_constraintTop_toBottomOf="@id/tv_result_item_name" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Spotify Client</string>
+    <string name="com_spotify_sdk_redirect_scheme">ticketswap-spotify</string>
+    <string name="com_spotify_sdk_redirect_host">ticketswap-spotify</string>
+</resources>

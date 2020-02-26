@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Dependencies.compileSdkVersion
+    defaultConfig {
+        applicationId Dependencies.applicationId
+        minSdkVersion Dependencies.minSdkVersion
+        targetSdkVersion Dependencies.targetSdkVersion
+        versionCode Dependencies.versionCode
+        versionName Dependencies.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // For @Parcelize annotation
+    androidExtensions {
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation Libs.kotlin_std
+    implementation Libs.kotlin_reflect
+    implementation Libs.appcompat
+    implementation Libs.support
+    implementation Libs.constraint_layout
+    implementation Libs.design
+
+    // Network
+    implementation Square.retrofit
+    implementation Square.moshi_retrofit
+    implementation Square.rxadapter
+    implementation Square.moshi
+    implementation Square.moshi_kotlin
+    implementation Square.okhttp
+    implementation Square.okhttp_intercepter
+    implementation Square.picasso
+
+    // RxJava
+    implementation Reactive.rxJava2
+    implementation Reactive.rxAndroid
+
+    // Log
+    implementation Square.timber
+
+    // Dagger
+    implementation Di.dagger
+    implementation Di.dagger_android
+    implementation Di.dagger_android_support
+    kapt Di.dagger_compiler
+    kapt Di.dagger_android_processor
+
+    // Spotify
+    implementation Spotify.spotify
+
+    // Architecture components
+    implementation ArchComponents.lifecycleExtentions
+    implementation ArchComponents.navigationFragment
+    implementation ArchComponents.navigationUi
+    implementation ArchComponents.roomRuntime
+    implementation ArchComponents.roomRx
+    kapt ArchComponents.roomCompiler
+
+    //Test
+    testImplementation TestLibs.junit
+    androidTestImplementation TestLibs.runner
+    testImplementation TestLibs.mockito
+    testImplementation TestLibs.mockito_kotlin
+    androidTestImplementation TestLibs.espresso
+
+
+
+}
